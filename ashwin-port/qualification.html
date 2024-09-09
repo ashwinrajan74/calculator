@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- site metas -->
+    <title>Education</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/font-awesome.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles for Header */
+        .header_section {
+            background: #080808;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .navbar-brand img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .navbar-brand img {
+                max-width: 120px; /* Adjust the logo size for smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                max-width: 100px; /* Further adjust logo size for very small screens */
+            }
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            width: 4px;
+            background-color: #000;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .timeline-item.left .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item.right .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px;
+        }
+
+        .timeline-content span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .portfolio_taital {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .portfolio_taital_1 {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                margin-bottom: 30px;
+            }
+
+            .timeline-line {
+                left: 50%;
+                width: 2px;
+            }
+
+            .timeline-item.left .timeline-content,
+            .timeline-item.right .timeline-content {
+                margin-left: 0;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .timeline-line {
+                left: 30px;
+                width: 2px;
+            }
+
+            .timeline-item.left .timeline-content,
+            .timeline-item.right .timeline-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header section start -->
+    <div class="header_section header_bg">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index1.html"><img src="logo.jpeg" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index1.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="qualification.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="service.html">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resume.pdf">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Header section end -->
+
+    <!-- Journey Section Start -->
+    <div class="qualification_section">
+        <div class="container">
+            <div class="portfolio_section layout_padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="portfolio_taital">My <span class="portfolio_taital_1">Journey</span></h1>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <!-- Timeline line -->
+                        <div class="timeline-line"></div>
+
+                        <!-- Timeline item -->
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <h3>Secondary Education</h3>
+                                <span>2020</span>
+                                <p>Completed my secondary education at Green Park International School, Namakkal, securing a percentage of 89.6%. My studies focused on building a strong academic foundation, enabling me to pursue higher goals.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <h3>Higher Education</h3>
+                                <span>2022</span>
+                                <p>Completed my higher education in the Bio-Math course at Green Park International School, securing a percentage of 87.6%. This period was instrumental in shaping my analytical and scientific approach to problem-solving.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <h3>College</h3>
+                                <span>2022</span>
+                                <p>Currently, I am pursuing my college education at Sri Venkateswara College of Engineering, specializing in Artificial Intelligence and Data Science. I have achieved a CGPA of 8.116, reflecting my dedication and commitment to this rapidly evolving field.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Journey Section End -->
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

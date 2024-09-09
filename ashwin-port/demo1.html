@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>ASHWINRAJAN</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+       body, .header_section {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centering header content */
+       
+
+        
+      
+
+       
+
+        
+        /* Initial styles */
+        .slide-in {
+            opacity: 0;
+        }
+
+        /* Applied animation */
+       
+        /* Text move on hover */
+        .hover-move {
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+        }
+        .hover-move:hover {
+            transform: translateX(10px);
+        }
+
+        /* Sliding line effect */
+        
+
+        /* Hidden line by default */
+       
+        /* Line appears and slides when hovered */
+       
+
+        /* Footer styling */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Background image settings */
+        .banner_section {
+            background: url('ash-bg.jpeg') no-repeat center center fixed;
+            background-size: cover; /* Ensures the image covers the entire section */
+            height: 100vh; /* Adjust the height as needed */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .banner_section {
+                background-attachment: scroll; /* Ensures the image scrolls with content on small screens */
+            }
+        }
+        /* Remove margin and padding from body and header */
+        body, .header_section {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centering header content */
+        .header_section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            background: #0b0b0b;
+        }
+
+        .navbar {
+            width: 100%;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        /* Keyframe animations for sliding effects */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Initial styles for the box */
+        .about_content_box {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            border: 2px solid #000;
+            padding: 20px;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto; /* Center the content horizontally */
+        }
+
+        /* Applied animation */
+        .animate-slide-in {
+            animation: slideIn 0.7s ease forwards;
+        }
+
+        /* About section styling */
+        .portfolio_section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .portfolio_taital {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* Increase space between heading and icons */
+        }
+
+        /* Social media icons styling */
+        .social_icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .social_icon ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .social_icon ul li {
+            margin: 0 10px;
+        }
+
+        .social_icon a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social_icon a:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .portfolio_taital {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .social_icon {
+                margin-top: 10px;
+            }
+            .banner_section {
+            background: url('ash-bg.jpeg') no-repeat center center fixed;
+            background-size: cover; /* Ensures the image covers the entire section */
+            height: 100vh; /* Adjust the height as needed */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .banner_section {
+                background-attachment: scroll; /* Ensures the image scrolls with content on small screens */
+            }
+        }
+        }
+    </style>
+</head>
+<body>
+    <!-- header section start -->
+    <div class="header_section header_bg">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index1.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="qualification.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="service.html">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hover-move" href='resume.pdf'>Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="banner_section layout_padding">
+        <section class="slide-wrapper">
+            <div class="container-fluid">
+                <div id="myCarousel" class="carousel slide slide-in" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="banner_taital_main slide-in">
+                                            <h3 class="banner_text hover-move">Hello, I am <br>ASHWINRAJAN J S</h3>
+                                            <h1 class="banner_taital hover-move">College Student</h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="social_icon slide-in">
+                                            <ul>
+                                                <li><a href="https://github.com/ashwinrajan74"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                                <li><a href="https://www.linkedin.com/in/ashwinrajan-j-s-7a8b6b297/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                                <li><a href="https://www.instagram.com/_.ashwinrajan._74/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional slides omitted for brevity -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="video_bt slide-in">
+                <div class="play_icon" onclick="location.reload();"><img src="play-icon.png" alt="Play Icon"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+</div>
+<!-- Header Section End -->
+
+<!-- Footer Section Start -->
+<div class="footer">
+    <p></p>
+    <a ></a>
+    <a ></a>
+</div>
+<!-- Footer Section End -->
+
+<!-- JavaScript Files -->
+<script src="jquery.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>
+<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="custom.js"></script>
+
+<!-- Custom JS for Sliding Effect -->
+<script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all elements with the class 'slide-in'
+        const elements = document.querySelectorAll('.slide-in');
+        
+        // Delay increment (in milliseconds)
+        let delay = 100;
+        
+        // Loop through each element and add the animation class with a delay
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('animate-slide-in');
+            }, delay * index); // Increment delay for each element
+        });
+    });
+</script>
+</body>
+</html>

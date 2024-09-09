@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header with Interactive Text</title>
+    <style>
+        /* Default styles for desktop */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('ash-bg.jpeg'); /* Default background for desktop */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 10px 20px; /* Spacing inside the header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure header is above other content */
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header nav {
+            display: flex;
+            gap: 15px; /* Spacing between links */
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .header a:hover {
+            background-color: #555; /* Hover effect */
+        }
+
+        /* Interactive text */
+        .interactive-text {
+            position: absolute;
+            left: 50px; /* Adjust distance from left */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .interactive-text h1 {
+            font-size: 48px; /* Larger header for "A college student" */
+            margin: 0;
+        }
+
+        .interactive-text h2 {
+            font-size: 24px; /* Smaller header for "Hi, I am" */
+            margin: 0;
+        }
+
+        /* Mobile view styles */
+        @media only screen and (max-width: 600px) {
+            body {
+                background: none; /* Remove default background */
+                margin: 0;
+                height: 100vh; /* Full viewport height */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header {
+                position: fixed; /* Make sure header stays at the top */
+                top: 0; /* Align the header to the top */
+                width: 100%; /* Full width */
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* Align items to the left */
+                justify-content: flex-start; /* Align items to the top */
+                background-color: rgba(0, 0, 0, 0.9); /* Darker background for side nav */
+                padding: 10px 20px; /* Padding for spacing */
+            }
+
+            .header .menu-toggle {
+                display: block;
+                font-size: 24px;
+                color: white;
+                background: none;
+                border: none;
+                cursor: pointer;
+                z-index: 1001; /* Ensure it is above other elements */
+                position: absolute;
+                top: 10px; /* Adjust as needed */
+                left: 10px; /* Adjust as needed */
+            }
+
+            .header nav {
+                display: none; /* Hide navigation by default on mobile */
+                flex-direction: column;
+                gap: 10px;
+                position: fixed;
+                top: 50px; /* Start below the menu toggle */
+                left: 0;
+                height: calc(100vh - 50px); /* Full height minus the toggle button height */
+                width: 250px;
+                background-color: rgba(0, 0, 0, 0.9); /* Darker background for side nav */
+                padding-top: 20px; /* Padding for spacing */
+                box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+                z-index: 1000; /* Ensure nav is above other content */
+                transition: transform 0.3s ease;
+                transform: translateX(-100%); /* Hide the nav off-screen */
+            }
+
+            .header nav.open {
+                display: flex;
+                transform: translateX(0); /* Show the nav */
+            }
+
+            .header .logo {
+                display: none; /* Hide logo on mobile */
+            }
+
+            .mobile-logo {
+                display: block; /* Make logo visible on mobile */
+                width: 200px; /* Adjust size as needed */
+                height: 200px; /* Adjust size as needed */
+                background-image: url('ash.jpeg'); /* Circular logo image */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50%; /* Makes the image circular */
+                position: absolute; /* Position logo */
+                z-index: 1001; /* Ensure logo is above the nav */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Center the logo */
+            }
+            /* Disable the interactive text on mobile */
+            .interactive-text {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="menu-toggle">&#9776;</button> <!-- Menu toggle button -->
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        <!-- Mobile logo container -->
+        <div class="mobile-logo"></div>
+    </header>
+
+    <div class="interactive-text">
+        <h2>Hi, I am</h2>
+        <h1>A college student</h1>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+            });
+        });
+
+        // Mouse movement interaction for desktop
+        document.addEventListener('mousemove', function(e) {
+            const text = document.querySelector('.interactive-text');
+            const moveAmount = 30; // Adjust movement amount
+
+            const xPos = (e.clientX / window.innerWidth) * moveAmount - (moveAmount / 2);
+            const yPos = (e.clientY / window.innerHeight) * moveAmount - (moveAmount / 2);
+
+            text.style.transform = `translate(${xPos}px, calc(-50% + ${yPos}px))`;
+        });
+    </script>
+</body>
+</html>
